@@ -2,10 +2,9 @@
   "name": "real-estate-agent",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
-  "main": "src/main/main.js",
+  "main": "out/main/main.js",
   "scripts": {
-    "dev": "electron-vite dev -w",
+    "dev": "electron-vite dev",
     "build": "electron-vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "electron-vite preview"
@@ -30,7 +29,7 @@
     "@typescript-eslint/parser": "^6.14.0",
     "@vitejs/plugin-react": "^4.2.1",
     "@vitejs/plugin-react-swc": "^3.5.0",
-    "autoprefixer": "^10.4.16",
+    "autoprefixer": "^10.4.17",
     "dotenv": "^16.3.1",
     "electron": "^28.2.3",
     "electron-vite": "^2.0.0",
@@ -39,7 +38,8 @@
     "eslint-plugin-react-refresh": "^0.4.5",
     "mockjs": "^1.1.0",
     "postcss": "^8.4.32",
-    "tailwindcss": "^3.3.6",
+    "postcss-loader": "^8.1.0",
+    "tailwindcss": "^3.4.1",
     "typescript": "^5.2.2",
     "vite": "^5.0.8",
     "vite-plugin-mock": "^2.9.6"

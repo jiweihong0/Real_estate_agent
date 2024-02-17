@@ -14,7 +14,8 @@ import type {
 } from "../type";
 import * as zod from "zod";
 
-const APIBaseURL = process.env.VITE_API_BASE_URL;
+// const APIBaseURL = process.env.VITE_API_BASE_URL;
+const APIBaseURL = "http://localhost:5173";
 
 const getFetch = (url: string, token: string) => {
   return fetch(`${APIBaseURL}/api${url}`, {

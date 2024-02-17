@@ -1,20 +1,21 @@
-import { app, BrowserWindow } from "electron";
-import "path";
+"use strict";
+const electron = require("electron");
+require("path");
 let mainWindow;
 function createWindow() {
-  mainWindow = new BrowserWindow({});
+  mainWindow = new electron.BrowserWindow({});
   mainWindow.loadURL("http://localhost:5173");
   mainWindow.on("closed", () => mainWindow = null);
 }
-app.whenReady().then(() => {
+electron.app.whenReady().then(() => {
   createWindow();
 });
-app.on("window-all-closed", () => {
+electron.app.on("window-all-closed", () => {
   if (process.platform !== "darwin") {
-    app.quit();
+    electron.app.quit();
   }
 });
-app.on("activate", () => {
+electron.app.on("activate", () => {
   if (mainWindow == null) {
     createWindow();
   }

@@ -3,11 +3,25 @@
   "private": true,
   "version": "0.0.0",
   "main": "out/main/main.js",
+  "build": {
+    "targets": [
+      {
+        "target": "nsis",
+        "arch": [
+          "x64"
+        ]
+      }
+    ]
+  },
   "scripts": {
     "dev": "electron-vite dev",
     "build": "electron-vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "electron-vite preview"
+    "preview": "electron-vite preview",
+    "start": "electron .",
+    "electron": "wait-on tcp:3333 && electron .",
+    "exe-dev": "concurrently -k \"npm run dev\" \"npm run electron\"",
+    "exe-build": "electron-builder"
   },
   "dependencies": {
     "@types/dotenv": "^8.2.0",
